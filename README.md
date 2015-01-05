@@ -11,7 +11,10 @@ All and all it offers more compatibility then all the popular Browser Node solut
 
 In the future we will add benchmarking and coparison for the module, require and process features.  Plus some examples and extensions to handle some of the core modules that using binding.
 
-Hope you enjoy this contribution and have a great day!
+the folders / directories are as follow:
+lib/   - the code modules directory
+bind/  - core binding module hacks
+docs/  - usage and reference documents
 
 Oh yeah, if you find something you think is not directly compatible with real NodeJS (keeping in mind this is for client/browser) or you have an idea how it could work be supported; please leave or contribute your suggestions or fork, along with what you think the incompatibility is.
 
