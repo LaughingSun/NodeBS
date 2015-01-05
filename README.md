@@ -20,3 +20,4 @@ Oh yeah, if you find something you think is not directly compatible with real No
 
 Hope you enjoy this contribution and have a great day!
 
+PS. No, it is not Bullsh!t. It is "Browser support".  :)
