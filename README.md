@@ -6,27 +6,27 @@ Node Browser Support: not as efficient as Browsify or RequireJS, but more compat
 Why would you want to use this?  If you have Node code that doesn't use binding core modules in a browser withyout a rewrite, as a code load manager, or even just to make your code more cross platform.
 
 Usage:
-<script src="path_to_NodeBs.js"></script>
-<script>
+&lt;script src="path_to_NodeBs.js">&lt;/script>
+&lt;script>
 NodeBS( './my_node_script.js' );                    // to load node compatible script files
 NodeBS.Exec( 'console.log( "Hello Whirled!" );' );  // to execute a node compatible script
-</script>
+&lt;/script>
 
 Although NodeBS will detect it's lib and other dependent folder, you can specifiy the parent folder where they reside with:
-<script>
+&lt;script>
 NodeBS.LibPath = './NodeBS/';                         // note, the path must end with a '/'
-</script>
+&lt;/script>
 
 By default script files are loaded using AJAX, you can also load them via Injection.  However Injection still will not allow cross domain loading for security reasons.  Turn on injection using:
-<script>
+&lt;script>
 NodeBS.UseInjection = true;                           // Load script files using Injecttion
 NodeBS.UseInjection = false;                          // Load script files using AJAX
-</script>
+&lt;/script>
 
-<script>
+&lt;script>
 NodeBS.Debug = true;                                  // turn on console.Debug messages for NodeBS
 NodeBS.Debug = false;                                 // turn off console.Debug messages for NodeBS
-</script>
+&lt;/script>
 
 Documentation is included as part of the repository in the doc folder.  For NodeJS documentation and API regerence go to the NodeJS website at http://nodejs.org/documentation/
 
