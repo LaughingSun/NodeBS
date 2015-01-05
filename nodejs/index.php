@@ -38,6 +38,22 @@ console.log = function ( content ) {
     line.textContent = content;
     testContainer.appendChild( line );
 }
+
+window.addEventListener('load', function (evt) {
+    var _resize = function () {
+            var w = pageContainer.offsetWidth,
+                h = pageContainer.offsetHeight;
+            rule.style.width = w + 'px';
+            rule.style.height = h + 'px';
+        },
+        pageContainer,
+        rule;
+    pageContainer= document.querySelector( '#page-container' );
+    // find style rule for .page
+    _resize();
+    window.addEventListener('resize', _resize, false);
+}, false);
+
 function dotest( path ) {
     var testContainer = document.querySelector( '#test-container' );
     testContainer.textContent = '';
@@ -54,52 +70,138 @@ root, html, body {
     padding: 0;
     margin: 0;
     border: 0px none;
+    overflow: hidden;
 }
-menu {
+
+#page-container,
+#test-container {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    top: 0px;
+    box-sizing: border-box;
+    padding: 50px 0px;
+    margin: 0;
+    border: 0px none;
+    overflow: hidden;
+}
+
+#page-container {
+    left: 0px;
+    padding: 50px 0px;
+    background-color: lightcyan;
+    color: darkblue;
+}
+
+#test-container {
+    right: 0px;
+    padding: 5px 10px;
+    background-color: lightgoldenrodyellow;
+    color: darkgoldenrod;
+}
+
+.page {
+    position: relative;
+    box-sizing: border-box;
+    padding: 5px;
+    margin: 0;
+    border: 0px none;
+    overflow: hidden;
+    background-color: paleturquoise;
+}
+
+#menu-container menu#page-menu {
+    padding: 0;
+    margin: 0;
+}
+
+#page-container header,
+#page-container footer {
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    left: 0px;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 5px;
+    overflow: hidden;
+}
+
+#page-container header {
+    top: 0px;
+}
+
+#page-container footer {
+    bottom: 0px;
+}
+
+#menu-container footer button {
+    width: 24%;
+    height: 40px;
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+#menu-container {
     position: absolute;
     top: 0px;
     left: 0px;
-    width: 50%;
+    width: 100%;
     height: 100%;
     box-sizing: border-box;
-    padding: 5px 10px;
+    padding: 0;
     margin: 0;
     border: 0px none;
     z-index: 10;
     background-color: lightcyan;
+    color: midnightblue;
 }
-#test-container {
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: 50%;
-    height: 100%;
-    box-sizing: border-box;
-    padding: 5px 10px;
-    margin: 0;
+
+menu#page-menu>li {
+    padding: 2px 5px;
+    cursor: pointer;
+}
+menu#page-menu>li:hover {
+    background-color: midnightblue;
+    color: lightcyan;
+}
+menu#page-menu>li button {
     border: 0px none;
-    background-color: lightgoldenrodyellow;
+    background-color: transparent;
+    color: inherit;
+    cursor: inherit;
 }
+menu#page-menu>li .status {
+    position: absolute;
+    display: inline-block;
+    width: 120px;
+    right: 5px;
+    text-align: right;
+    padding: 0px 5px;
+}
+
 code {
     display: block;
 }
         </style>
     </head>
-    <body>
-        <menu>
-            <div> LEARN YOU THE NODE.JS FOR MUCH WIN!</div>
-            <div>Select an exercise and hit Enter to begin</div>
-            <hr/>
-<?php
-$dirpath = './';
+    <body><section id="page-container"><div class="page"><menu id="menu-main"><?php
+$dirpath = './pages/';
 $dpl = strlen( $dirpath );
 foreach ( glob($dirpath . '*', GLOB_ONLYDIR | GLOB_NOESCAPE ) as $dir ) {
     $name = substr( $dir, $dpl );
     echo <<<__HTML__
-<button onclick="dotest('{$dir}')">{$name}</button>
+<li onclick="dotest('{$dir}')"><button>{$name}</button><div class="status">Complete</div></li>
 __HTML__;
 }
-?></menu>
-        <pre id="test-container"></pre>
-    </body>
+?></menu></div><header>
+                <div> LEARN YOU THE NODE.JS FOR MUCH WIN!</div>
+                <div>Select an exercise and hit Enter to begin</div>
+        </header><footer>
+                <button>Back</button>
+                <button>Help</button>
+                <button>Credits</button>
+                <button>Exit</button>
+            </footer></section>
+        <pre id="test-container"></pre></body>
 </html>
