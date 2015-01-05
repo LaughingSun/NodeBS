@@ -28,6 +28,8 @@ NodeBS.Debug = true;                                  // turn on console.Debug m
 NodeBS.Debug = false;                                 // turn off console.Debug messages for NodeBS
 </script>
 
+Documentation is included as part of the repository in the doc folder.  For NodeJS documentation and API regerence go to the NodeJS website at http://nodejs.org/documentation/
+
 Most of the core modules are supported, however core modules which include binding modules (external modules with binding which are part of NodeJS) you will have to have add or write additional binding module support (native scripts that reside in the ./NodeBS/bindings directory.)
 
 All and all it offers more compatibility then all the popular Browser Node solutions.  It is written with both compatibility and performance in mind, but if you want pure performance you should always role your own. :)
