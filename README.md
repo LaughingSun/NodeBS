@@ -51,9 +51,9 @@ In the future we will add benchmarking and coparison for the module, require and
 
 the folders / directories are as follow:
 
-  lib/   the code modules directory
-  bind/  core binding module hacks
-  docs/  usage and reference documents
++ lib/   the code modules directory
++ bind/  core binding module hacks
++  docs/  usage and reference documents
 
 Oh yeah, if you find something you think is not directly compatible with real NodeJS (keeping in mind this is for client/browser) or you have an idea how it could work be supported; please leave or contribute your suggestions or fork, along with what you think the incompatibility is.
 
