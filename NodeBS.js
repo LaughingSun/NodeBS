@@ -90,7 +90,7 @@
         _BINDDIR_ = _$NODEBS + 'bind/',
         _JSNArgs = 'module,require,__dirname,__filename,process',
         _JSNFPre = '"use strict";\nvar global=self,exports=module.exports;',
-        _JSNFPost= ';return exports',
+        _JSNFPost= ';return module.exports',
         _ModuleCache = {},
         _BindCache = {},
         _CoreModules = {
@@ -304,19 +304,22 @@
                 _exports = {},
                 _module = Object.defineProperties( {}, {
                     exports: {
-                        get: function () { return _exports },
+                        get: function () {
+                            return _exports
+                        },
                         set: function ( f ) {
-                            var n;
-                            if ( f instanceof Function ) {
-                                if ( (n = f.name || ((n=f.toString().match(/function\s+(\w+)/m))&&n[1])) )
-                                    _exports[n] = f;
-                                else
-                                    throw "cannot export an anonymous function";
-                            } else if ( f instanceof Object ) {
-                                for ( n in f )
-                                    _exports[n] = f[n];
-                            } else
-                                throw "cannot export a non object";
+                            _exports = f;
+//                            var n;
+//                            if ( f instanceof Function ) {
+//                                if ( (n = f.name || ((n=f.toString().match(/function\s+(\w+)/m))&&n[1])) )
+//                                    _exports[n] = f;
+//                                else
+//                                    throw "cannot export an anonymous function";
+//                            } else if ( f instanceof Object ) {
+//                                for ( n in f )
+//                                    _exports[n] = f[n];
+//                            } else
+//                                throw "cannot export a non object";
                         }
                     },
                     id: { value: fullpath },
