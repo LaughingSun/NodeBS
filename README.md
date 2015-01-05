@@ -8,37 +8,37 @@ Why would you want to use this?  If you have Node code that doesn't use binding 
 Usage:
 
 ```
-&lt;script src="path_to_NodeBs.js"&gt;&lt;/script&gt;
-&lt;script&gt;
+<script src="path_to_NodeBs.js"></script>
+<script>
 NodeBS( './my_node_script.js' );                    // to load node compatible script files
 NodeBS.Exec( 'console.log( "Hello Whirled!" );' );  // to execute a node compatible script
-&lt;/script&gt;
+</script>
 ```
 
 Although NodeBS will detect it's lib and other dependent folder, you can specifiy the parent folder where they reside with:
 
 ```
-&lt;script&gt;
+<script>
 NodeBS.LibPath = './NodeBS/';                         // note, the path must end with a '/'
-&lt;/script&gt;
+</script>
 ```
 
 By default script files are loaded using AJAX, you can also load them via Injection.  However Injection still will not allow cross domain loading for security reasons.  Turn on injection using:
 
 ```
-&lt;script&gt;
+<script>
 NodeBS.UseInjection = true;                           // Load script files using Injecttion
 NodeBS.UseInjection = false;                          // Load script files using AJAX
-&lt;/script&gt;
+</script>
 ```
 
 Debugging enabled using NodeBS.Debug:
 
 ```
-&lt;script&gt;
+<script>
 NodeBS.Debug = true;                                  // turn on console.Debug messages for NodeBS
 NodeBS.Debug = false;                                 // turn off console.Debug messages for NodeBS
-&lt;/script&gt;
+</script>
 ```
 
 Documentation is included as part of the repository in the doc folder.  For NodeJS documentation and API regerence go to the NodeJS website at http://nodejs.org/documentation/
@@ -52,11 +52,8 @@ In the future we will add benchmarking and coparison for the module, require and
 the folders / directories are as follow:
 
 lib/   - the code modules directory
-
 bind/  - core binding module hacks
-
 docs/  - usage and reference documents
-
 
 Oh yeah, if you find something you think is not directly compatible with real NodeJS (keeping in mind this is for client/browser) or you have an idea how it could work be supported; please leave or contribute your suggestions or fork, along with what you think the incompatibility is.
 
