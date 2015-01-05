@@ -23,4 +23,4 @@
  */
 
 console.log( /*module,require,*/process.argv,__filename,__dirname );
-console.log( module.id, module.exports, module.parent.exports );
+console.log( module.id, module.exports, module.parent );

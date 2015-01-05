@@ -84,8 +84,10 @@
         _UseInjection = false,
         _$HOME = location.href.match( /^\w+:\/\/[^\/]+((?:\/~[^\/]+)?\/)/ )[1],
         _$PREFIX = location.href.match( /^\w+:\/\/[^\/]+((?:\/~[^\/]+)?\/(?:[^\/]+\/)*)/ )[1],
-        _COREDIR_ = _$PREFIX + 'lib/',
-        _BINDDIR_ = _$PREFIX + 'bind/',
+        _$NODEBS = document.querySelector( 'script[src$="NodeBS.js"]' ).src.slice(0,-9)
+                || _$HOME + 'NodeBS/',
+        _COREDIR_ = _$NODEBS + 'lib/',
+        _BINDDIR_ = _$NODEBS + 'bind/',
         _JSNArgs = 'module,require,__dirname,__filename,process',
         _JSNFPre = '"use strict";\nvar global=self,exports=module.exports;',
         _JSNFPost= ';return exports',

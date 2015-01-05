@@ -27,18 +27,34 @@ THE SOFTWARE.
         <title>TODO supply a title</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="NodeBS.js"></script>
+        <script src="../NodeBS.js"></script>
+        <style>
+img#menu-pointer {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    transform: rotateZ(10deg);
+    -webkit-transform: rotateZ(10deg);
+    -moz-transform: rotateZ(10deg);
+    -o-transform: rotateZ(10deg);
+    -ms-transform: rotateZ(10deg);
+}
+img#menu-icon {
+    vertical-align: middle;
+}
+        </style>
         <script>
 NodeBS.UseInjection = false;
 NodeBS.Debug = false;
 NodeBS.Exec( 'console.log("NodeBS.Exec( ... ) // success!");' );
-NodeBS( './test-constants' );
-NodeBS( './exercises/hello_world/solution/solution' );
-NodeBS( './exercises/baby_steps/solution/solution', 1, 2, 3, 4, 5 );
-//NodeBS( './exercises/my_first_io/solution/solution' );
+NodeBS( './printenv' );
         </script>
     </head>
     <body>
-        <div>TODO write content</div>
+        <h1>Open your browsers "JavaScript console" (<img id="menu-icon" src ="menuicon-chrome.png" />) for results.</h1>
+        <div>
+            <img src ="jsconsole-chrome.png" />
+        </div>
+        <img id="menu-pointer" src ="pointer.png" />
     </body>
 </html>
