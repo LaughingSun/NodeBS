@@ -1,7 +1,7 @@
 NodeBS
 ======
 
-Node Browser Scripting, Not as efficient as Browsify or RequireJS, but more compatible AND pure client, no pre processing.
+Node Browser Support: not as efficient as Browsify or RequireJS, but more compatible AND pure client, no pre processing.
 
 Why would you want to use this?  If you have Node code that doesn't use binding core modules in a browser withyout a rewrite, as a code load manager, or even just to make your code more cross platform.
 
